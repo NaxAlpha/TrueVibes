@@ -2,18 +2,27 @@
 
 ## Overview
 
-TrueVibes follows a standard Flutter application architecture. The application is currently in its initial setup phase with a basic structure that follows Flutter's recommended practices.
+TrueVibes is an AI-powered vibe coding platform that enables users to build applications and implement features using artificial intelligence assistance. The application follows a modern Flutter architecture with a clean separation of concerns and a feature-based organization.
 
 ## Project Structure
 
-The project follows the standard Flutter project structure:
+The project follows a feature-based Flutter project structure:
 
 ```
 truevibes/
 ├── android/          # Android-specific configuration and code
 ├── ios/              # iOS-specific configuration and code
 ├── lib/              # Dart code for the application
-│   └── main.dart     # Application entry point
+│   ├── main.dart     # Application entry point
+│   ├── models/       # Data models
+│   │   └── project.dart  # Project data model
+│   ├── screens/      # UI screens
+│   │   └── project_list_screen.dart  # Project list screen
+│   ├── services/     # Business logic services
+│   │   └── storage_service.dart  # Project storage service
+│   ├── utils/        # Utility functions and constants
+│   └── widgets/      # Reusable UI components
+│       └── project_list_item.dart  # Project item widget
 ├── macos/            # macOS-specific configuration (Flutter desktop support)
 ├── linux/            # Linux-specific configuration (Flutter desktop support)
 ├── windows/          # Windows-specific configuration (Flutter desktop support)
@@ -43,11 +52,13 @@ The current implementation is minimal, but a typical Flutter application archite
 
 ## Widget Structure
 
-The current widget structure follows Flutter's stateful/stateless widget pattern:
+The current widget structure follows Flutter's stateful/stateless widget pattern with responsive design principles:
 
-- `MyApp` (Stateless): Root widget that sets up the MaterialApp with theming
-- `MyHomePage` (Stateful): Main screen with counter functionality
-- `_MyHomePageState`: State management for the home page
+- `MyApp` (Stateless): Root widget that sets up the MaterialApp with theming and routes
+- `ProjectListScreen` (Stateful): Main screen showing all projects with a responsive layout
+- `ProjectListItem` (Stateless): Reusable widget for displaying project information
+- `StorageService`: Service class for handling persistent storage using Hive
+- `Project`: Data model representing project information
 
 ## Future Architecture Considerations
 

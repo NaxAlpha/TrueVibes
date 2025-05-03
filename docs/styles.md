@@ -2,31 +2,47 @@
 
 ## Current Styling
 
-The TrueVibes application currently uses the default Flutter Material Design styling with some customizations:
+The TrueVibes application implements a polished Material Design styling with attention to cross-platform usability:
 
 ### Color Scheme
 
 - **Primary Color**: Deep Purple (`Colors.deepPurple`)
 - **Color Scheme**: Generated from seed color using Material 3's color system
-- **Theme Mode**: Light theme (no dark theme implementation yet)
+- **Theme Mode**: Light theme (with dark theme ready for implementation)
+- **Button Colors**: Primary color for elevated buttons, outlined style for secondary actions
+- **Card Colors**: Subtle background with appropriate elevation for depth
 
 ### Typography
 
-- Uses the default Material Design typography scale
-- Headline Medium style for counter number display
-- Default text style for counter label
+- Uses the Material Design typography scale for consistency
+- TitleLarge with bold weight for project names
+- BodyMedium for directory paths with ellipsis overflow
+- BodySmall for creation dates and secondary information
+- Appropriate text sizing that scales with device settings
 
 ### Layout
 
-- Uses Material Design's `Scaffold` as the base layout structure
-- Centers content vertically and horizontally on the main screen
-- Uses `Column` for vertical arrangement of text elements
+- **Responsive Container**: Fixed width on large displays, full width on smaller screens
+- **Adaptive Grid/List**: Grid layout for wide screens, list layout for narrow screens
+- **Scaffold**: Material Design's `Scaffold` as the base layout structure
+- **Constrained Sizing**: Width constraints for better readability on large displays
+- **Flexible Buttons**: Stacked vertically on mobile, side-by-side on desktop
+- **Padding and Spacing**: Consistent 16dp padding around content areas
 
 ### Components
 
-- **AppBar**: Uses `inversePrimary` color from the theme's color scheme
-- **Floating Action Button**: Standard Material FAB with add icon
-- **Icons**: Uses Material Icons font (`Icons.add`)
+- **AppBar**: Uses `inversePrimary` color with settings icon action
+- **Cards**: Rounded corners (12dp radius) with appropriate elevation for project items
+- **Buttons**:
+  - Elevated buttons with icon for primary actions
+  - Outlined buttons with icon for secondary actions
+  - Consistent vertical padding (12-16dp) for touch targets
+- **Dialogs**: Material Design alert dialogs for confirmations and inputs
+- **Icons**: Material Icons for consistent visual language
+  - Add icon for creating projects
+  - Folder icon for opening projects
+  - Delete icon for removing projects
+- **Empty State**: Centered layout with descriptive text and prominent action buttons
 
 ## Planned Style Guide
 
