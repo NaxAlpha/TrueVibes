@@ -15,25 +15,35 @@ class ProjectListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Use a responsive design approach
+    final isWideScreen = MediaQuery.of(context).size.width > 800;
+
     return Card(
       elevation: 2,
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min, // Ensure the column doesn't try to take all available space
           children: [
+            // Project name and delete button
             Row(
               children: [
                 Expanded(
                   child: Text(
                     project.name,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.delete_outline, color: Colors.red),
+                  tooltip: 'Delete Project',
                   onPressed: () {
                     // Show confirmation dialog before deleting
                     showDialog(
@@ -61,18 +71,30 @@ class ProjectListItem extends StatelessWidget {
                 ),
               ],
             ),
+            
             const SizedBox(height: 8),
-            Text(
-              'Directory: ${project.directory}',
-              style: Theme.of(context).textTheme.bodyMedium,
-              overflow: TextOverflow.ellipsis,
+            
+            // Project details with better overflow handling
+            Tooltip(
+              message: project.directory,
+              child: Text(
+                'Directory: ${project.directory}',
+                style: Theme.of(context).textTheme.bodyMedium,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
             ),
+            
             const SizedBox(height: 4),
+            
             Text(
               'Created: ${project.formattedDate}',
               style: Theme.of(context).textTheme.bodySmall,
             ),
+            
             const SizedBox(height: 16),
+            
+            // Action button with improved styling
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
@@ -81,6 +103,8 @@ class ProjectListItem extends StatelessWidget {
                 onPressed: onOpen,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 12),
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
                 ),
               ),
             ),

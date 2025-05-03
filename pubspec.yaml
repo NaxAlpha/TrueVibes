@@ -19,6 +19,7 @@ dependencies:
   intl: ^0.18.1              # For date formatting
   file_picker: ^6.0.0        # For picking directories for new projects
   provider: ^6.1.1           # For state management
+  permission_handler: ^11.0.0  # For handling permissions
 
 dev_dependencies:
   flutter_test:

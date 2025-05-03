@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -28,5 +28,17 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	
+	<!-- File access permissions for macOS -->
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>TrueVibes needs access to downloads folder to create and open project files.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>TrueVibes needs access to documents folder to create and open project files.</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>TrueVibes needs access to desktop folder to create and open project files.</string>
+	<key>NSFileProviderDomainUsageDescription</key>
+	<string>TrueVibes needs access to file system to create and open project files.</string>
+	<key>NSFileProviderPresenceUsageDescription</key>
+	<string>TrueVibes needs access to file system to create and open project files.</string>
 </dict>
 </plist>

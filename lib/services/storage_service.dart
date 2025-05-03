@@ -6,6 +6,7 @@ import 'package:truevibes/models/project.dart';
 import 'package:truevibes/models/project_adapter.dart';
 import 'dart:io';
 import 'package:path/path.dart' as path;
+import 'package:permission_handler/permission_handler.dart';
 
 class StorageService {
   static const String _projectsBoxName = 'projects';
